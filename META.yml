@@ -1,6 +1,6 @@
 ---
 name: bioperl-network
-version: 1.005002005
+version: 1.0050021
 author:
   - 'Bioperl Team <bioperl-l@bioperl.org>'
 abstract: 'bioperl-network - package for biological networks'
@@ -20,28 +20,28 @@ dynamic_config: 1
 provides:
   Bio::Network::Edge:
     file: Bio/Network/Edge.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::IO:
     file: Bio/Network/IO.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::IO::dip_tab:
     file: Bio/Network/IO/dip_tab.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::IO::psi:
     file: Bio/Network/IO/psi.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::IO::psi::intact:
     file: Bio/Network/IO/psi/intact.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::Interaction:
     file: Bio/Network/Interaction.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::Node:
     file: Bio/Network/Node.pm
-    version: 1.005002005
+    version: 1.0050021
   Bio::Network::ProteinNet:
     file: Bio/Network/ProteinNet.pm
-    version: 1.005002005
+    version: 1.0050021
 generated_by: Module::Build version 0.2805
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
