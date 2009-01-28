@@ -1,15 +1,15 @@
 ---
-name: bioperl-network
-version: 1.0050021
+name: BioPerl-network
+version: 1.005009_001
 author:
-  - 'Bioperl Team <bioperl-l@bioperl.org>'
-abstract: 'bioperl-network - package for biological networks'
-license: artistic
+  - 'BioPerl Team <bioperl-l@bioperl.org>'
+abstract: 'BioPerl-network - package for biological networks'
+license: perl
 resources:
-  license: http://opensource.org/licenses/artistic-license.php
+  license: http://dev.perl.org/licenses/
 requires:
-  Bio::Root::Version: 1.5.2
-  Graph: 0.8
+  Bio::Root::Version: 1.006000
+  Graph: 0.86
   perl: 5.6.1
 optional_features:
   Bio::Graph::IO::psi:
@@ -20,29 +20,32 @@ dynamic_config: 1
 provides:
   Bio::Network::Edge:
     file: Bio/Network/Edge.pm
-    version: 1.0050021
+    version: 1.005009_001
   Bio::Network::IO:
     file: Bio/Network/IO.pm
-    version: 1.0050021
+    version: 1.005009_001
   Bio::Network::IO::dip_tab:
     file: Bio/Network/IO/dip_tab.pm
-    version: 1.0050021
-  Bio::Network::IO::psi:
-    file: Bio/Network/IO/psi.pm
-    version: 1.0050021
+    version: 1.005009_001
+  Bio::Network::IO::psi10:
+    file: Bio/Network/IO/psi10.pm
+    version: 1.005009_001
+  Bio::Network::IO::psi25:
+    file: Bio/Network/IO/psi25.pm
+    version: 1.005009_001
   Bio::Network::IO::psi::intact:
     file: Bio/Network/IO/psi/intact.pm
-    version: 1.0050021
+    version: 1.005009_001
   Bio::Network::Interaction:
     file: Bio/Network/Interaction.pm
-    version: 1.0050021
+    version: 1.005009_001
   Bio::Network::Node:
     file: Bio/Network/Node.pm
-    version: 1.0050021
+    version: 1.005009_001
   Bio::Network::ProteinNet:
     file: Bio/Network/ProteinNet.pm
-    version: 1.0050021
-generated_by: Module::Build version 0.2805
+    version: 1.005009_001
+generated_by: Module::Build version 0.3
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

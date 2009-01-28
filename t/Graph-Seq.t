@@ -1,40 +1,19 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules#
-# $Id: protgraph.t,v 1.1 2004/03/13 23:45:32 radams Exp
+# $Id: Graph-Seq.t 15432 2009-01-22 13:20:35Z cjfields $
 
-use vars qw($NUMTESTS $DEBUG $ERROR);
 use strict;
-$DEBUG = $ENV{'BIOPERLDEBUG'} || 0;
 
 BEGIN {
-	# to handle systems with no installed Test module
-	# we include the t dir (where a copy of Test.pm is located)
-	# as a fallback
-	eval { require Test; };
-	$ERROR = 0;
-	if ( $@ ) {
-		use lib 't';
-	}
-	use Test;
-	$NUMTESTS  = 16;
-	plan tests => $NUMTESTS;
-	eval { require Graph; };
-	if ( $@ ) {
-		warn("Perl's Graph required by the bioperl-network package, skipping tests");
-		$ERROR = 1;
-	}
-}
+	use Bio::Root::Test;
+	test_begin(-tests => 21,
+			   -requires_module => 'Graph');
 
-END {
-	foreach ( $Test::ntest..$NUMTESTS) {
-		skip("Missing dependencies. Skipping tests",1);
-	}
-}
-exit 0 if $ERROR == 1;
+	use_ok('Graph::Undirected');
+	use_ok('Graph::Traversal::DFS');
+	use_ok('Bio::Seq');
 
-require Graph::Undirected;
-require Graph::Traversal::DFS;
-require Bio::Seq;
+}
 
 #
 # The purpose of these tests is to check to see if bugs have been
@@ -80,10 +59,10 @@ for my $seq (@vs) {
 	ok $seq->seq;
 }
 
-# Still an intermittent bug
-# @vs = $g->articulation_points; 
-# ok $vs[0]->seq; # not OK in Graph v. .80
-# ok scalar @vs, 2;
+# Fixed in Graph .86
+@vs = $g->articulation_points; 
+ok $vs[0]->seq; # not OK in Graph v. .80
+ok scalar @vs == 2;
 
 my @cc = $g->connected_components;
 for my $ref (@cc) {

@@ -1,4 +1,4 @@
-# $Id: intact.pm,v 1.6 2006/10/02 16:13:05 bosborne Exp $
+# $Id: intact.pm 11906 2006-10-02 16:13:05Z bosborne $
 #
 # BioPerl module for Bio::Network::IO::psi::intact
 #

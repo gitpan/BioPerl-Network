@@ -1,4 +1,4 @@
-# $Id: Interaction.pm,v 1.6 2006/10/02 16:13:04 bosborne Exp $
+# $Id: Interaction.pm 14471 2008-02-04 15:04:03Z bosborne $
 #
 # BioPerl module for Bio::Network::Interaction
 #
@@ -54,8 +54,8 @@ web:
 
 =head1 AUTHORS
 
-Richard Adams richard.adams@ed.ac.uk
 Brian Osborne bosborne at alum.mit.edu
+Richard Adams richard.adams@ed.ac.uk
 
 Maintained by Brian Osborne
 
@@ -63,15 +63,8 @@ Maintained by Brian Osborne
 
 use strict;
 package Bio::Network::Interaction;
-use Bio::Root::Root;
-use Bio::AnnotatableI;
-use Bio::Annotation::Collection;
-#use Bio::IdentifiableI;
-#use Bio::DescribableI;
+use base qw(Bio::Root::Root Bio::AnnotatableI Bio::Annotation::Collection);
 
-use vars qw(@ISA);
-
-@ISA = qw( Bio::Root::Root Bio::AnnotatableI);
 
 =head2 new
 
@@ -182,7 +175,7 @@ sub annotation {
 		  unless $value->isa("Bio::AnnotationCollectionI");
 		$obj->{'_annotation'} = $value;
 	} elsif( ! defined $obj->{'_annotation'}) {
-		$obj->{'_annotation'} = new Bio::Annotation::Collection;
+		$obj->{'_annotation'} = Bio::Annotation::Collection->new();
 	}
 	return $obj->{'_annotation'};
 }
@@ -200,5 +193,7 @@ sub object_id {
 	my ($self,$id) = @_;
 	$id ? $self->primary_id($id) : return $self->primary_id;
 }
+
+1;
 
 __END__

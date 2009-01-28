@@ -1,4 +1,4 @@
-# $Id: README,v 1.3 2006/10/13 13:13:06 bosborne Exp $
+# $Id: README 15100 2008-12-06 18:59:02Z bosborne $
 
 bioperl-network README
 
@@ -35,13 +35,14 @@ attribute of an edge, and there can be 1 or more interactions per edge.
 An interaction can be thought of as one experiment or one experimental 
 observation. 
 
-The formats that can be parsed are DIP (tab-delimited) and PSI MI (XML). 
-Capabilities include the ability to merge networks, select nodes and
-interactions by identifier, add and delete components (nodes,
-interactions, and edges), count all components of a certain type, get
-all components of a certain type, and get subgraphs. Then you have all
-the functionality of Perl's Graph in addition such as traversal using
-different algorithms, getting interior and exterior nodes, and getting all 
+The formats that can be parsed are DIP (tab-delimited) and PSI MI
+(XML), either version 1 or version 2.5. Capabilities include the
+ability to merge networks, select nodes and interactions by
+identifier, add and delete components (nodes, interactions, and
+edges), count all components of a certain type, get all components of
+a certain type, and get subgraphs. Then you have all the functionality
+of Perl's Graph in addition such as traversal using different
+algorithms, getting interior and exterior nodes, and getting all  
 connected subgraphs. Graph is quite rich in functionality, this list
 is only a small subset of available methods, see the documentation 
 for Graph for more detail (http://search.cpan.org/~jhi/Graph/lib/Graph.pod).
@@ -67,7 +68,8 @@ Modules similar to these were first released as part of the core BioPerl package
 and were called Bio::Graph*. Bio::Graph was copied to a separate package,
 bioperl-network, and renamed Bio::Network. All of the modules were
 revised and a new module, Interaction.pm, was added. The
-functionality of the PSI MI parser, IO/psi.pm, was enhanced.
+functionality of the PSI MI 1.0 parser was enhanced and a version
+2.5 parser was added.
 
 Graph manipulation in the predecessor Bio::Graph was based on the 
 Bio::Graph::SimpleGraph module by Nat Goodman. The first release as a
@@ -80,7 +82,4 @@ differences between Graph and Bio::Graph::SimpleGraph.
 The advantages to using Graph are that Bioperl developers are not
 responsible for maintaining the code that actually handles graph
 manipulation and there is more functionality in Graph than in SimpleGraph.
-
-The disadvantage is that we now rely on others to keep the package bug-free.
-You must install version .80 or greater but even this version is not
-completely bug-free (see the BUGS file in this package for details).
+You must install version .86 of Graph, or greater.

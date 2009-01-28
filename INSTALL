@@ -1,4 +1,4 @@
-$Id: INSTALL,v 1.6 2006/12/06 14:17:35 sendu Exp $
+$Id: INSTALL 15099 2008-12-06 18:57:22Z bosborne $
 
 bioperl-network Installation
 
@@ -19,7 +19,7 @@ bioperl-network Installation
 	
 	bioperl-network also depends on Perl's Graph package. See CPAN at 
 	www.perl.org for instructions on downloading and installing Graph,
-	use Graph version .80 or greater.
+	use Graph version .86 or greater.
 
 	Reading PSI XML files using bioperl-network requires the XML::Twig 
 	module. See CPAN at www.perl.org for instructions on downloading 

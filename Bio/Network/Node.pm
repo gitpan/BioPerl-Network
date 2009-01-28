@@ -1,4 +1,4 @@
-# $Id: Node.pm,v 1.5 2006/10/02 16:13:04 bosborne Exp $
+# $Id: Node.pm 14471 2008-02-04 15:04:03Z bosborne $
 #
 # BioPerl module for Bio::Network::Node
 #
@@ -60,9 +60,7 @@ Maintained by Brian Osborne
 
 use strict;
 package Bio::Network::Node;
-use Bio::Root::Root;
-use vars qw(@ISA);
-@ISA = qw(Bio::Root::Root);
+use base 'Bio::Root::Root';
 
 =head2 new
 

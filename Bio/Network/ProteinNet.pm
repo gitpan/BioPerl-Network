@@ -1,4 +1,4 @@
-# $Id: ProteinNet.pm,v 1.12 2006/10/02 16:13:04 bosborne Exp $
+# $Id: ProteinNet.pm 15102 2008-12-06 19:03:52Z bosborne $
 #
 # BioPerl module for Bio::Network::ProteinNet
 #
@@ -13,7 +13,7 @@ Bio::Network::ProteinNet - a representation of a protein interaction graph.
 
   # Read in from file
   my $graphio = Bio::Network::IO->new(-file   => 'human.xml',
-                                      -format => 'psi');
+                                      -format => 'psi25');
   my $graph = $graphio->next_network();
 
   my @edges = $gr->edges;
@@ -25,13 +25,11 @@ Bio::Network::ProteinNet - a representation of a protein interaction graph.
         print $protein->display_id," ";
       }
     }
-    print "\n";
   }
 
 =head1 Perl Graph module
 
-The bioperl-network package uses Perl's Graph module and it's essential
-that version .80 or greater be installed.
+The bioperl-network package uses the Perl Graph module, use version .86 or greater.
 
 =head2 Working with Nodes
 
@@ -107,7 +105,7 @@ be retrieved through their identifiers:
   # Retrieve all interactions
   my @interx = $graph->interactions;
 
-  # Let's get interactions above a threshold confidence score.
+  # Get interactions above a threshold confidence score
   for my $interx (@interx) {
 	 if ($interx->weight > 0.6) {
 		 print $interx->primary_id, "\t", $interx->weight, "\n";
@@ -154,12 +152,12 @@ A simple approach would look something like this:
 =head1 DESCRIPTION
 
 A ProteinNet is a representation of a protein interaction network.
-Its functionality comes from the L<Graph> of Perl and from BioPerl,
+Its functionality comes from the L<Graph> module of Perl and from BioPerl,
 the nodes or vertices in the network are Sequence objects.
 
 =head2 Nodes
 
-A node is one or more BioPerl sequence object, a L<Bio::Seq> or 
+A node is one or more BioPerl sequence objects, a L<Bio::Seq> or 
 L<Bio::Seq::RichSeq> object. Essentially the graph can use any objects 
 that implement L<Bio::AnnotatableI> and L<Bio::IdentifiableI> interfaces 
 since these objects hold useful identifiers. This is relevant since the 
@@ -184,8 +182,9 @@ equivalent to one experiment or one experimental observation.
 =head1 FOR DEVELOPERS
 
 In this module, the nodes or vertexes are represented by L<Bio::Seq>
-objects containing all possible database identifiers but no sequence, as
-parsed from the interaction files.
+objects containing database identifiers but usually
+without sequence, since the data is parsed from protein-protein
+interaction data.
 
 Interactions should be L<Bio::Network::Interaction> objects, which are 
 L<Bio::IdentifiableI> implementing objects. At present Interactions only 
@@ -198,7 +197,7 @@ structures of Graph itself:
 
 =item _id_map
 
-Look-up hash ('_id_map') for finding a node by any of its ids. The keys
+Look-up hash ('_id_map') for finding a node using any of its ids. The keys
 are standard identifiers (e.g. "GenBank:A12345") and the values are 
 memory addresses used by Graph (e.g. "Bio::Network::Node=HASH(0x1bc53e4)"). 
 
@@ -212,7 +211,7 @@ Interactions (e.g. "Bio::Network::Interaction=HASH(0x1bc46f2)").
 =back
 
 The function of these hashes is either to facilitate fast lookups or 
-cache data temporarily.
+to cache data.
 
 =head1 API CHANGES
 
@@ -234,11 +233,6 @@ Bio::Graph::SimpleGraph.
 The advantages to using Graph are that Bioperl developers are not
 responsible for maintaining the code that actually handles graph
 manipulation and there is more functionality in Graph than in SimpleGraph.
-
-The disadvantage is that we now rely on others to keep the package bug-free,
-and there are some bugs in Graph. You should use version .80 or greater 
-but even this version is not free of bugs (a list of known bugs 
-can be found in the BUGS file in this package).
 
 =over 13
 
@@ -334,8 +328,8 @@ web:
 
 =head1 AUTHORS
 
-Richard Adams richard.adams@ed.ac.uk
 Brian Osborne bosborne at alum.mit.edu
+Richard Adams richard.adams@ed.ac.uk
 
 Maintained by Brian Osborne
 
@@ -346,13 +340,10 @@ module written by Nat Goodman.
 
 package Bio::Network::ProteinNet;
 use strict;
-use Bio::Root::Root;
-use Graph 0.80;
+use Graph 0.86;
 use Bio::Network::Interaction;
 use Bio::Root::Root;
-
 use vars qw($GRAPH_ARRAY_INDEX @ISA);
-
 @ISA = qw( Graph::Undirected Bio::Root::Root );
 
 # A Graph object is an array reference, therefore we need
@@ -848,6 +839,40 @@ sub remove_nodes {
 	$g;
 }
 
+=head2 get_random_edge
+
+ Name      : get_random_edge
+ Purpose   : Alias to Graph::random_edge
+ Usage     : $edge = $graph1->get_random_edge;
+ Arguments : 
+ Returns   : An Edge object
+ Notes     :
+
+=cut
+
+sub get_random_edge {
+	my $self = shift;
+	my $e = $self->random_edge;
+	$e;
+}
+
+=head2 get_random_node
+
+ Name      : get_random_node
+ Purpose   : Alias to Graph::random_vertex
+ Usage     : $node = $graph1->get_random_node;
+ Arguments : 
+ Returns   : A Node object
+ Notes     :
+
+=cut
+
+sub get_random_node {
+	my $self = shift;
+	my $n = $self->random_vertex;
+	$n;
+}
+
 =head2 is_forest
 
  Name      : is_forest
@@ -914,7 +939,7 @@ sub unconnected_nodes {
  Returns   : An array or a count of the array of nodes that will fragment 
              the graph if deleted. 
  Notes     : This method is currently broken due to bugs in Graph v. .69
-
+             and later
 =cut
 
 sub articulation_points {
@@ -922,7 +947,6 @@ sub articulation_points {
  	my @nodes = $self->SUPER::articulation_points; 
  	wantarray ? @nodes : scalar @nodes;
 }
- 
 
 =head2 is_articulation_point
 
@@ -980,32 +1004,6 @@ sub has_node {
 	 return $self->has_vertex($node);		
 }
 
-=head2 nodes_by_id
-
-  Name      : nodes_by_id
-  Purpose   : Alias to get_nodes_by_id
-  Notes     : Deprecated
-
-=cut
-
-sub nodes_by_id {
-	my $self = shift;
-	my @ids = @_;
-	return $self->get_nodes_by_id(@ids);
-}
-
-=head2 edge_count
-
- Name     : edge_count
- Purpose  : Alias to edges()
- Notes    : Deprecated, use edges()
-
-=cut
-
-sub edge_count {
-	my $self = shift;
-	return scalar $self->edges;
-}
 
 =head2 interactions
 
@@ -1032,6 +1030,33 @@ sub interactions {
 	} else {
 		return scalar keys %{$self->[$GRAPH_ARRAY_INDEX]->{'_interx_id_map'}};
 	}
+}
+
+=head2 nodes_by_id
+
+  Name      : nodes_by_id
+  Purpose   : Alias to get_nodes_by_id
+  Notes     : Deprecated
+
+=cut
+
+sub nodes_by_id {
+	my $self = shift;
+	my @ids = @_;
+	return $self->get_nodes_by_id(@ids);
+}
+
+=head2 edge_count
+
+ Name     : edge_count
+ Purpose  : Alias to edges()
+ Notes    : Deprecated, use edges()
+
+=cut
+
+sub edge_count {
+	my $self = shift;
+	return scalar $self->edges;
 }
 
 =head2 neighbor_count
@@ -1177,6 +1202,5 @@ sub next_edge {
 =cut
 
 sub next_node {
-
 
 }

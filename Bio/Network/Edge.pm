@@ -1,4 +1,4 @@
-# $Id: Edge.pm,v 1.6 2006/10/02 16:13:04 bosborne Exp $
+# $Id: Edge.pm 14471 2008-02-04 15:04:03Z bosborne $
 #
 # BioPerl module for Bio::Network::Edge
 #
@@ -52,8 +52,8 @@ web:
 
 =head1 AUTHORS
 
-Richard Adams richard.adams@ed.ac.uk
 Brian Osborne bosborne at alum.mit.edu
+Richard Adams richard.adams@ed.ac.uk
 
 Maintained by Brian Osborne
 
@@ -61,9 +61,7 @@ Maintained by Brian Osborne
 
 use strict;
 package Bio::Network::Edge;
-use Bio::Root::Root;
-use vars qw(@ISA);
-@ISA = qw(Bio::Root::Root);
+use base 'Bio::Root::Root';
 
 =head2 new
 
@@ -131,5 +129,4 @@ __END__
 
 sub next_node {
 	my $self = shift;
-
 }

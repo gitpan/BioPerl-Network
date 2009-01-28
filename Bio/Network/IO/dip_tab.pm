@@ -1,4 +1,4 @@
-# $Id: dip_tab.pm,v 1.6 2006/10/02 16:13:05 bosborne Exp $
+# $Id: dip_tab.pm 14474 2008-02-04 18:47:04Z bosborne $
 #
 # BioPerl module for Bio::Network::IO::dip_tab
 #
@@ -80,8 +80,8 @@ web:
 
 =head1 AUTHORS
 
-Richard Adams richard.adams@ed.ac.uk
 Brian Osborne bosborne at alum.mit.edu
+Richard Adams richard.adams@ed.ac.uk
 
 =cut
 
@@ -131,8 +131,8 @@ sub next_network {
 		# ($node_id1,$node_id2) = $self->_fix_id("DIP",$node_id1,$node_id2);
 
 		## skip if score is below threshold
-		if (defined($self->{'_th'}) && defined($score)) {
-			next unless $score >= $self->{'_th'};
+		if ($self->threshold && defined($score)) {
+			next unless $score >= $self->threshold;
 		}
 
 	   ## build node object if it's a new node, use DIP id
