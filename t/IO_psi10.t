@@ -1,16 +1,17 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules#
-# $Id: IO_psi10.t 15432 2009-01-22 13:20:35Z cjfields $
+# $Id: IO_psi10.t 15528 2009-02-11 13:40:03Z cjfields $
 
 use strict;
 
 BEGIN {
 	use Bio::Root::Test;
-	test_begin(-tests => 21,
+	test_begin(-tests => 22,
 			   -requires_module => 'Graph',
 			   -requires_module => 'XML::Twig');
 
 	use_ok('Bio::Network::IO');
+	use_ok('Bio::Network::Node');
 }
 
 my $verbose = test_debug();

@@ -1,4 +1,4 @@
-# $Id: ProteinNet.pm 15102 2008-12-06 19:03:52Z bosborne $
+# $Id: ProteinNet.pm 15563 2009-02-24 01:49:38Z cjfields $
 #
 # BioPerl module for Bio::Network::ProteinNet
 #
@@ -317,6 +317,17 @@ of the Bioperl mailing lists. Your participation is much appreciated.
 
   bioperl-l@bioperl.org                  - General discussion
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
+
+=head2 Support 
+ 
+Please direct usage questions or support issues to the mailing list:
+  
+L<bioperl-l@bioperl.org>
+  
+rather than to the module maintainer directly. Many experienced and 
+reponsive experts will be able look at the problem and quickly 
+address it. Please include a thorough description of the problem 
+with code and data examples if at all possible.
 
 =head2 Reporting Bugs
 

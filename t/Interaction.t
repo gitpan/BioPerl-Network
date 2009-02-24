@@ -1,18 +1,19 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules
-# $Id: Interaction.t 15432 2009-01-22 13:20:35Z cjfields $
+# $Id: Interaction.t 15563 2009-02-24 01:49:38Z cjfields $
 
 use strict;
 
 BEGIN {
 	use Bio::Root::Test;
-	test_begin(-tests => 22,
+	test_begin(-tests => 23,
 			   -requires_module => 'Graph');
 
 	use_ok('Bio::Network::ProteinNet');
 	use_ok('Bio::Network::Interaction');
 	use_ok('Bio::Network::Node');
 	use_ok('Bio::Seq');
+	use_ok('Bio::Annotation::Comment');
 	use_ok('Bio::Annotation::Collection');
 	use_ok('Bio::Annotation::OntologyTerm');
 }
