@@ -1,15 +1,14 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules
-# $Id: Edge.t 15432 2009-01-22 13:20:35Z cjfields $
+# $Id: Edge.t 16204 2009-09-29 19:46:49Z cjfields $
 
 use strict;
 
 BEGIN {
 	use Bio::Root::Test;
-	test_begin(-tests => 10,
+	test_begin(-tests => 9,
 			   -requires_module => 'Graph');
 
-	use_ok('Bio::Network::ProteinNet');
 	use_ok('Bio::Network::Edge');
 	use_ok('Bio::Network::Node');
 	use_ok('Bio::Seq');

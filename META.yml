@@ -1,50 +1,41 @@
 ---
-name: BioPerl-network
-version: 1.006000
+name: BioPerl-Network
+version: 1.006000_001
 author:
   - 'BioPerl Team <bioperl-l@bioperl.org>'
-abstract: 'BioPerl-network - package for biological networks'
+abstract: 'BioPerl-Network - package for biological networks'
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
 requires:
+  Bio::Root::Version: 1.006001
   Graph: 0.86
-  perl: 5.6.1
-optional_features:
-  Bio::Graph::IO::psi:
-    description: parsing PSI XML
-    requires:
-      XML::Twig: 3.22
+  perl: v5.6.1
+recommends:
+  XML::Twig: 3.22
+configure_requires:
+  Module::Build: 0.35
 dynamic_config: 1
 provides:
   Bio::Network::Edge:
-    file: Bio/Network/Edge.pm
-    version: 1.006000
+    file: lib/Bio/Network/Edge.pm
   Bio::Network::IO:
-    file: Bio/Network/IO.pm
-    version: 1.006000
+    file: lib/Bio/Network/IO.pm
   Bio::Network::IO::dip_tab:
-    file: Bio/Network/IO/dip_tab.pm
-    version: 1.006000
+    file: lib/Bio/Network/IO/dip_tab.pm
   Bio::Network::IO::psi10:
-    file: Bio/Network/IO/psi10.pm
-    version: 1.006000
+    file: lib/Bio/Network/IO/psi10.pm
   Bio::Network::IO::psi25:
-    file: Bio/Network/IO/psi25.pm
-    version: 1.006000
+    file: lib/Bio/Network/IO/psi25.pm
   Bio::Network::IO::psi::intact:
-    file: Bio/Network/IO/psi/intact.pm
-    version: 1.006000
+    file: lib/Bio/Network/IO/psi/intact.pm
   Bio::Network::Interaction:
-    file: Bio/Network/Interaction.pm
-    version: 1.006000
+    file: lib/Bio/Network/Interaction.pm
   Bio::Network::Node:
-    file: Bio/Network/Node.pm
-    version: 1.006000
+    file: lib/Bio/Network/Node.pm
   Bio::Network::ProteinNet:
-    file: Bio/Network/ProteinNet.pm
-    version: 1.006000
-generated_by: Module::Build version 0.3
+    file: lib/Bio/Network/ProteinNet.pm
+generated_by: Module::Build version 0.35
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

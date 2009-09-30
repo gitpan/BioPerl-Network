@@ -1,6 +1,6 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules#
-# $Id: IO_psi10.t 15528 2009-02-11 13:40:03Z cjfields $
+# $Id: IO_psi10.t 16204 2009-09-29 19:46:49Z cjfields $
 
 use strict;
 
@@ -73,11 +73,11 @@ $n = $g1->get_nodes_by_id("EBI-474016");
 #
 # PSI XML from HPRD
 #
+# The individual files from HPRD are not standard PSI, problems parsing them
 ok $io = Bio::Network::IO->new
   (-format => 'psi10',
 	-file   => test_input_file("00001.xml"));
 # ok $g1 = $io->next_network(); 
-# The individual files from HPRD are not standard PSI, problems parsing them
 
 __END__
 

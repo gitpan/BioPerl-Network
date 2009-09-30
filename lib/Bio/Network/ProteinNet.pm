@@ -1,4 +1,4 @@
-# $Id: ProteinNet.pm 15563 2009-02-24 01:49:38Z cjfields $
+# $Id: ProteinNet.pm 16219 2009-09-30 04:22:33Z cjfields $
 #
 # BioPerl module for Bio::Network::ProteinNet
 #
@@ -319,11 +319,11 @@ of the Bioperl mailing lists. Your participation is much appreciated.
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
 =head2 Support 
- 
+
 Please direct usage questions or support issues to the mailing list:
-  
-L<bioperl-l@bioperl.org>
-  
+
+I<bioperl-l@bioperl.org>
+
 rather than to the module maintainer directly. Many experienced and 
 reponsive experts will be able look at the problem and quickly 
 address it. Please include a thorough description of the problem 
@@ -951,6 +951,7 @@ sub unconnected_nodes {
              the graph if deleted. 
  Notes     : This method is currently broken due to bugs in Graph v. .69
              and later
+
 =cut
 
 sub articulation_points {

@@ -1,4 +1,4 @@
-# $Id: dip_tab.pm 15563 2009-02-24 01:49:38Z cjfields $
+# $Id: dip_tab.pm 16219 2009-09-30 04:22:33Z cjfields $
 #
 # BioPerl module for Bio::Network::IO::dip_tab
 #
@@ -71,11 +71,11 @@ of the Bioperl mailing lists. Your participation is much appreciated.
   http://bioperl.org/wiki/Mailing_lists  - About the mailing lists
 
 =head2 Support 
- 
+
 Please direct usage questions or support issues to the mailing list:
-  
-L<bioperl-l@bioperl.org>
-  
+
+I<bioperl-l@bioperl.org>
+
 rather than to the module maintainer directly. Many experienced and 
 reponsive experts will be able look at the problem and quickly 
 address it. Please include a thorough description of the problem 

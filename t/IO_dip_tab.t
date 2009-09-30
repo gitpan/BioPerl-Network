@@ -1,17 +1,15 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules
-# $Id: IO_dip_tab.t 15432 2009-01-22 13:20:35Z cjfields $
+# $Id: IO_dip_tab.t 16204 2009-09-29 19:46:49Z cjfields $
 
 use strict;
 
 BEGIN {
 	use Bio::Root::Test;
-	test_begin(-tests => 19,
+	test_begin(-tests => 17,
 			   -requires_module => 'Graph');
 
 	use_ok('Bio::Network::IO');
-	use_ok('Bio::Network::Edge');
-	use_ok('Bio::Network::Node');
 	use_ok('Bio::Seq');
 }
 
