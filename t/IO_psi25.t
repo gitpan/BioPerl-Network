@@ -1,6 +1,6 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules#
-# $Id: IO_psi25.t 15432 2009-01-22 13:20:35Z cjfields $
+# $Id$
 
 use strict;
 

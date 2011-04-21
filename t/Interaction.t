@@ -1,6 +1,6 @@
 # This is -*-Perl-*- code#
 # Bioperl Test Harness Script for Modules
-# $Id: Interaction.t 15563 2009-02-24 01:49:38Z cjfields $
+# $Id$
 
 use strict;
 

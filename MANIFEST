@@ -1,5 +1,4 @@
 AUTHORS
-BioPerl-network.pm
 BUGS
 Build.PL
 Changes
@@ -16,7 +15,6 @@ lib/Bio/Network/Node.pm
 lib/Bio/Network/ProteinNet.pm
 LICENSE
 MANIFEST			This list of files
-MANIFEST.SKIP
 README
 t/data/00001.xml
 t/data/12082530.xls
@@ -58,5 +56,5 @@ t/lib/Test/Tutorial.pod
 t/lib/Test/Warn.pm
 t/Node.t
 t/ProteinNet.t
-Makefile.PL
 META.yml
+META.json

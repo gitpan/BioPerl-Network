@@ -1,4 +1,4 @@
-# $Id: dip_tab.pm 16219 2009-09-30 04:22:33Z cjfields $
+# $Id$
 #
 # BioPerl module for Bio::Network::IO::dip_tab
 #
