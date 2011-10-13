@@ -4,7 +4,7 @@
       "BioPerl Team <bioperl-l@bioperl.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110580",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110440",
    "license" : [
       "perl_5"
    ],
@@ -24,7 +24,7 @@
             "XML::Twig" : "3.22"
          },
          "requires" : {
-            "Bio::Root::Version" : "1.006900",
+            "Bio::Root::Version" : "1.006901",
             "Graph" : "0.86",
             "perl" : "v5.6.1"
          }
@@ -74,5 +74,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "1.006900"
+   "version" : "1.006901"
 }
