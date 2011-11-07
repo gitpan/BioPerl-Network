@@ -14,6 +14,13 @@
    },
    "name" : "BioPerl-Network",
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::Exception" : 0,
+            "Test::More" : 0,
+            "Test::Warn" : 0
+         }
+      },
       "configure" : {
          "requires" : {
             "Module::Build" : "0.38"
@@ -74,5 +81,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "1.006901"
+   "version" : "1.006902"
 }
